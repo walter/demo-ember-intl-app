@@ -1,0 +1,3 @@
+[submodule "server/translations"]
+	path = server/translations
+	url = https://github.com/walter/demo-translations.git

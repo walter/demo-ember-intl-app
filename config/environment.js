@@ -20,7 +20,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    defaultLocale: 'en-nz',
+    supportedLocales: ['en-nz', 'mi', 'ar']
   };
 
   if (environment === 'development') {

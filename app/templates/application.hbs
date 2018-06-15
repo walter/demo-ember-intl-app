@@ -1,5 +1,29 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h2>{{t 'welcome'}}</h2>
+
+<h3>{{t 'chooseLanguage'}}</h3>
+
+{{#x-select value=preferredLocale action=(action "changeLocale") as |xs|}}
+  {{#each intl.locales as |locale|}}
+    {{#xs.option value=locale}}{{locale}}{{/xs.option}}
+  {{/each}}
+{{/x-select}}
+
+<h3>{{t 'enterParameters'}}</h3>
+
+<fieldset>
+
+  <label>{{t 'nameLabel'}}</label>
+  {{input value=name action=(action "updateName")}}
+
+  <label>{{t 'numberLabel'}}</label>
+  {{input value=number action=(action "updateNumber")}}
+
+</fieldset>
+
+{{#if name}}
+  <p>
+    {{t 'someText' name=name number=number}}
+  </p>
+{{/if}}
 
 {{outlet}}
