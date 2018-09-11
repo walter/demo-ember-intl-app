@@ -1,9 +1,9 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import { service } from '@ember-decorators/service';
 import config from 'demo-intl/config/environment';
 
-export default Route.extend({
-  intl: service(),
+export default class ApplicationRoute extends Route {
+  @service intl;
 
   async beforeModel() {
     let preferredLocale = localStorage.preferredLocale;
@@ -23,10 +23,9 @@ export default Route.extend({
     await this._loadTranslations(preferredLocale);
 
     return this.get('intl').setLocale(localesWithDefault);
-  },
+  }
 
   async _loadTranslations(preferredLocale) {
-    console.log(config);
     const remainingLocales = config.supportedLocales.slice().removeObject(preferredLocale);
 
     let translations = await fetch(`/translations/${preferredLocale}.json`).then(response => response.json());
@@ -38,4 +37,4 @@ export default Route.extend({
       this.get('intl').addTranslations(locale, translations);
     });
   }
-});
+}

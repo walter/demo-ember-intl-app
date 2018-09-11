@@ -16,8 +16,11 @@
     "test": "EMBER_CLI_MODULE_UNIFICATION=true ember test"
   },
   "devDependencies": {
+    "@ember-decorators/babel-transforms": "^2.0.0",
+    "babel-eslint": "^8.0.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.1.0",
+    "ember-auto-import": "^1.2.13",
     "ember-cli": "github:ember-cli/ember-cli",
     "ember-cli-app-version": "^3.2.0",
     "ember-cli-babel": "^6.16.0",
@@ -29,6 +32,7 @@
     "ember-cli-qunit": "^4.3.2",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-uglify": "^2.1.0",
+    "ember-decorators": "^2.4.1",
     "ember-export-application-global": "^2.0.0",
     "ember-intl": "^3.1.1",
     "ember-load-initializers": "^1.1.0",
