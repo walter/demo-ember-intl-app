@@ -26,6 +26,7 @@ export default Route.extend({
   },
 
   async _loadTranslations(preferredLocale) {
+    console.log(config);
     const remainingLocales = config.supportedLocales.slice().removeObject(preferredLocale);
 
     let translations = await fetch(`/translations/${preferredLocale}.json`).then(response => response.json());
