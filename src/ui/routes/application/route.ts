@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember-decorators/service';
 import IntlService from 'ember-intl/services/intl';
-import config from '../../../../config/environment';
+import config from 'demo-intl/config/environment';
 
 export default class ApplicationRoute extends Route {
   @service intl!: IntlService;

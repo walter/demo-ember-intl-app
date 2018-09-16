@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 import { service } from '@ember-decorators/service';
 import { action } from '@ember-decorators/object';
 import IntlService from 'ember-intl/services/intl';
-import config from '../../../../config/environment';
+import config from 'demo-intl/config/environment';
 
 export default class extends Controller {
   @service intl!: IntlService;

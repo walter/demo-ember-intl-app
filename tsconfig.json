@@ -21,6 +21,9 @@
     "baseUrl": ".",
     "module": "es6",
     "paths": {
+      "demo-intl/config/*": [
+        "config/*"
+      ],
       "demo-intl/tests/*": [
         "tests/*"
       ],
