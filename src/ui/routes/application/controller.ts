@@ -1,15 +1,16 @@
 import Controller from '@ember/controller';
 import { service } from '@ember-decorators/service';
 import { action } from '@ember-decorators/object';
-import config from 'demo-intl/config/environment';
+import IntlService from 'ember-intl/services/intl';
+import config from '../../../../config/environment';
 
 export default class extends Controller {
-  @service intl;
+  @service intl!: IntlService;
 
   // new fields syntax
-  preferredLocale = config.defaultLocale;
-  name = '';
-  number =  0;
+  preferredLocale: string = config.defaultLocale;
+  name: string = '';
+  numberValue: number = 0;
 
   init() {
     this._super(...arguments);
@@ -19,8 +20,8 @@ export default class extends Controller {
   }
 
   @action
-  changeLocale(locale) {
-    this.get('intl').setLocale([locale, config.defaultLocale]);
+  changeLocale(locale: string) {
+    this.get('intl').setLocale([locale, config.defaultLocale,]);
 
     this._setLangAndDir(locale);
 
@@ -29,17 +30,17 @@ export default class extends Controller {
   }
 
   @action
-  updateName(name) {
+  updateName(name: string) {
     this.set('name', name);
   }
 
   @action
-  updateNumber(number) {
-    this.set('number', number);
+  updateNumber(numberValue: number) {
+    this.set('numberValue', numberValue);
   }
 
   // update document lang and if ar change dir to rtf
-  _setLangAndDir(locale) {
+  _setLangAndDir(locale: string) {
     document.documentElement.lang = locale;
     if (locale === 'ar') {
       document.documentElement.dir = 'rtl';

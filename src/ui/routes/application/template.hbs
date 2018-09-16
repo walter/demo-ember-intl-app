@@ -16,13 +16,13 @@
   {{input value=name action=(action "updateName")}}
 
   <label>{{t 'numberLabel'}}</label>
-  {{input value=number action=(action "updateNumber")}}
+  {{input value=numberValue action=(action "updateNumber")}}
 
 </fieldset>
 
 {{#if name}}
   <p>
-    {{t 'someText' name=name number=number}}
+    {{t 'someText' name=name number=numberValue}}
   </p>
 {{/if}}
 
