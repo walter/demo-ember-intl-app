@@ -2,28 +2,16 @@
 
 <h3>{{t 'chooseLanguage'}}</h3>
 
-{{#x-select value=preferredLocale action=(action "changeLocale") as |xs|}}
-  {{#each intl.locales as |locale|}}
-    {{#xs.option value=locale}}{{locale}}{{/xs.option}}
-  {{/each}}
-{{/x-select}}
+{{locale-chooser onLocaleChange=(action "onLocaleChange")}}
 
 <h3>{{t 'enterParameters'}}</h3>
 
-<fieldset>
+{{translation-inputs
+  name=name
+  nameAction=(action "updateName")
+  numberValue=numberValue
+  numberAction=(action "updateNumber")}}
 
-  <label>{{t 'nameLabel'}}</label>
-  {{input value=name action=(action "updateName")}}
-
-  <label>{{t 'numberLabel'}}</label>
-  {{input value=numberValue action=(action "updateNumber")}}
-
-</fieldset>
-
-{{#if name}}
-  <p>
-    {{t 'someText' name=name number=numberValue}}
-  </p>
-{{/if}}
+{{render-text name=name numberValue=numberValue}}
 
 {{outlet}}

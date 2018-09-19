@@ -19,4 +19,4 @@ export default class EmberClearIntl extends IntlService.extend({
 
     return translation;
   },
-}) { };
+}) { }

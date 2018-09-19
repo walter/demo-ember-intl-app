@@ -9,3 +9,10 @@ declare module 'ember-intl/services/intl' {
     public addTranslations(locale: string, translations: {}): void
   }
 }
+
+declare module 'ember-intl/test-support' {
+  export function setupIntl(hooks: any): void;
+  export function setupIntl(hooks: any, locale?: string): void;
+  export function setupIntl(hooks: any, translations?: {}): void;
+  export function setupIntl(hooks: any, locale?: string, translations?: {}): void;
+}
