@@ -2,16 +2,16 @@
 
 <h3>{{t 'chooseLanguage'}}</h3>
 
-{{locale-chooser onLocaleChange=(action "onLocaleChange")}}
+<LocaleChooser @onLocaleChange={{action "onLocaleChange"}} />
 
 <h3>{{t 'enterParameters'}}</h3>
 
-{{translation-inputs
-  name=name
-  nameAction=(action "updateName")
-  numberValue=numberValue
-  numberAction=(action "updateNumber")}}
+<TranslationInputs
+  @name={{this.name}}
+  @nameAction={{action "updateName"}}
+  @numberValue={{this.numberValue}}
+  @numberAction={{action "updateNumber"}} />
 
-{{render-text name=name numberValue=numberValue}}
+<RenderText @name={{this.name}} @numberValue={{this.numberValue}} />
 
 {{outlet}}
