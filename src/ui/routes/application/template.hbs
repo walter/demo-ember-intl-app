@@ -1,0 +1,17 @@
+<h2>{{t 'welcome'}}</h2>
+
+<h3>{{t 'chooseLanguage'}}</h3>
+
+<LocaleChooser @onLocaleChange={{action "onLocaleChange"}} />
+
+<h3>{{t 'enterParameters'}}</h3>
+
+<TranslationInputs
+  @name={{this.name}}
+  @nameAction={{action "updateName"}}
+  @numberValue={{this.numberValue}}
+  @numberAction={{action "updateNumber"}} />
+
+<RenderText @name={{this.name}} @numberValue={{this.numberValue}} />
+
+{{outlet}}

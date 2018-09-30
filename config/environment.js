@@ -1,29 +1,35 @@
+/* eslint-env node */
 'use strict';
 
 module.exports = function(environment) {
   let ENV = {
+    'ember-resolver': {
+      features: {
+        EMBER_RESOLVER_MODULE_UNIFICATION: true
+      }
+    },
     modulePrefix: 'demo-intl',
     environment,
     rootURL: '/',
     locationType: 'auto',
+    defaultLocale: 'en-nz',
+    supportedLocales: ['en-nz', 'mi', 'ar'],
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+        'ember-module-unification': true
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
-      }
+      },
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-
-    defaultLocale: 'en-nz',
-    supportedLocales: ['en-nz', 'mi', 'ar']
+    }
   };
 
   if (environment === 'development') {
@@ -43,11 +49,10 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+
   }
 
   return ENV;

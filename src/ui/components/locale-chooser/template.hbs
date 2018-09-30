@@ -1,0 +1,5 @@
+{{#x-select value=preferredLocale action=(action 'changeLocale') as |xs|}}
+  {{#each intl.locales as |locale|}}
+    {{#xs.option value=locale}}{{locale}}{{/xs.option}}
+  {{/each}}
+{{/x-select}}
